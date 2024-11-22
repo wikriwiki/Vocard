@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/level_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#FFFAE5">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <android.widget.Button
+            android:id="@+id/backMain"
+            android:layout_width="115dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/solid_button"
+            android:text="홈으로"
+            android:textAllCaps="false"
+            android:textColor="#FFF9E1"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="챕터를 선택해주세요"
+            android:textColor="#4F4F4F"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/level1"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/solid_button"
+            android:text="Chapter 1"
+            android:textAllCaps="false"
+            android:textColor="#FFF9E1" />
+
+        <android.widget.Button
+            android:id="@+id/level2"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/solid_button"
+            android:text="Chapter 2"
+            android:textAllCaps="false"
+            android:textColor="#FFF9E1" />
+
+        <android.widget.Button
+            android:id="@+id/level3"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/solid_button"
+            android:text="Chapter 3"
+            android:textAllCaps="false"
+            android:textColor="#FFF9E1" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
