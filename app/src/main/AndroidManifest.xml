@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".LevelSelectActivity" />
         <activity android:name=".WordStudyActivity" />
-        <activity android:name=".CardFilpActivity" />
+        <activity android:name=".CardFlipActivity" />
     </application>
 
 </manifest>
