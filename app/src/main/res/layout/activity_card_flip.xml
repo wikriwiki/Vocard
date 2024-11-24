@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:paddingBottom="15dp"
+    android:background="@color/background_color">
 
     <!-- 상단 제시어 -->
     <TextView
         android:id="@+id/tv_prompt"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="255dp"
         android:gravity="center"
         android:padding="16dp"
         android:text="제시어를 입력하세요"

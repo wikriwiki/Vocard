@@ -19,6 +19,7 @@ public class WordStudyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_study);
 
         ImageView img = findViewById(R.id.imageView);
+        img.setClipToOutline(true);
         TextView englishWordView = findViewById(R.id.englishWord);
         TextView koreanMeaningView = findViewById(R.id.koreanMeaning);
 
