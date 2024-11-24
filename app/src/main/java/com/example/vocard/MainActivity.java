@@ -1,5 +1,6 @@
 package com.example.vocard;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -15,10 +16,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // 시스템 바 패딩 적용
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // 버튼 클릭 시 activity_level_select로 이동
+        findViewById(R.id.startBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LevelSelectActivity.class);
+            startActivity(intent);
         });
     }
 }
