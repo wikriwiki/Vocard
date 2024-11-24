@@ -139,7 +139,7 @@
             android:background="#FFCCCC"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:src="@drawable/santa" />
+            android:src="@drawable/ic_launcher_background" />
 
         <!-- 카드 9 -->
         <ImageView
