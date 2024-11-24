@@ -9,6 +9,7 @@
     android:padding="16dp"
     android:background="#FFFAE5">
 
+
     <!-- 이미지뷰 중앙 상단 -->
     <ImageView
         android:id="@+id/imageView"
@@ -19,6 +20,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:contentDescription="단어 이미지"
+        android:background="@drawable/rounded_corner_border"
         android:src="@drawable/sample_image" />
 
 
@@ -34,10 +36,10 @@
             android:id="@+id/englishWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:text="Apple"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="8dp" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/speakerIcon"
