@@ -56,6 +56,58 @@
         android:layout_marginBottom="50dp"
         />
 
+    <!-- 동적 카드 레이아웃 -->
+    <GridLayout
+        android:id="@+id/cardGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:useDefaultMargins="true"
+        android:layout_marginBottom="50dp">
+
+        <!-- 카드 1 -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#E0F7FA"
+            android:scaleType="centerCrop"
+            android:contentDescription="Card 1"
+            android:layout_margin="5dp" />
+
+        <!-- 카드 2 -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#E0F7FA"
+            android:scaleType="centerCrop"
+            android:contentDescription="Card 2"
+            android:layout_margin="5dp" />
+
+        <!-- 카드 3 -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#E0F7FA"
+            android:scaleType="centerCrop"
+            android:contentDescription="Card 3"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+    </GridLayout>
+
     <!-- 이전/다음 버튼 하단 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,4 +135,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
