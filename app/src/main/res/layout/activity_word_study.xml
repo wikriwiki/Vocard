@@ -14,59 +14,65 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="440dp"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:contentDescription="단어 이미지"
         android:background="@drawable/rounded_corner_border"
-        android:src="@drawable/sample_image" />
+        android:contentDescription="단어 이미지"
+        android:scaleType="fitXY"
+        android:src="@drawable/sample_image"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"/>
 
 
     <!-- 영단어와 스피커 아이콘 -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="7dp">
-
-        <TextView
-            android:id="@+id/englishWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="Apple"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/speakerIcon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_speaker"
-            android:contentDescription="발음 듣기" />
+            android:contentDescription="발음 듣기"
+            android:src="@drawable/ic_speaker" />
+
+        <TextView
+            android:id="@+id/englishWord"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="Appleabc"
+            android:textColor="#1F8643"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/koreanMeaning"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:gravity="start"
+            android:text="사과사과"
+            android:textColor="#8B302D"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <!-- 한글 뜻 -->
-    <TextView
-        android:id="@+id/koreanMeaning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="사과"
-        android:textSize="30sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        />
+
 
     <!-- 이전/다음 버튼 하단 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="50dp">
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp">
 
         <android.widget.Button
             android:id="@+id/prevButton"
