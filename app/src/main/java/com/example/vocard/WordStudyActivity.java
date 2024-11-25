@@ -2,9 +2,11 @@ package com.example.vocard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,15 +19,32 @@ public class WordStudyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_study);
-
         ImageView img = findViewById(R.id.imageView);
         img.setClipToOutline(true);
+
+        ImageView ttsBtn = findViewById(R.id.speakerIcon);
+        ttsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 원하는 동작을 여기에 작성
+                Toast.makeText(getApplicationContext(), "발음 재생중!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         TextView englishWordView = findViewById(R.id.englishWord);
         TextView koreanMeaningView = findViewById(R.id.koreanMeaning);
 
         Button nxtBtn = findViewById(R.id.nextButton);
         Button prvBtn = findViewById(R.id.prevButton);
         Button gameBtn = findViewById(R.id.goToGameBtn);
+
+
+        Button prevBtn = (Button) findViewById(R.id.backMain);
+        prevBtn.setOnClickListener(view -> {
+            finish();
+        });
+
+
 
         // 전달받은 챕터 정보 가져오기
         int chapter = getIntent().getIntExtra("chapter", -1);

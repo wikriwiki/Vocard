@@ -9,6 +9,18 @@
     android:padding="16dp"
     android:background="#FFFAE5">
 
+    <android.widget.Button
+        android:id="@+id/backMain"
+        android:layout_width="115dp"
+        android:layout_height="48dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/solid_button"
+        android:text="뒤로 가기"
+        android:textAllCaps="false"
+        android:textColor="#FFF9E1"
+        tools:ignore="RtlHardcoded" />
 
     <!-- 이미지뷰 중앙 상단 -->
     <ImageView
@@ -35,10 +47,12 @@
 
         <ImageView
             android:id="@+id/speakerIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:contentDescription="발음 듣기"
-            android:src="@drawable/ic_speaker" />
+            android:src="@drawable/ic_speaker"
+            android:scaleType="fitCenter"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/englishWord"
@@ -69,41 +83,44 @@
     <!-- 이전/다음 버튼 하단 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="141dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp">
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
 
         <android.widget.Button
             android:id="@+id/prevButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/solid_button"
             android:text="이전"
-            android:layout_marginEnd="15dp"
-            android:textColor="#FFF9E1"
-            android:background="@drawable/solid_button"/>
+            android:textColor="#FFF9E1" />
+
+        <android.widget.Button
+            android:id="@+id/goToGameBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@drawable/solid_button"
+            android:text="게임하러 가기"
+            android:textColor="#FFF9E1" />
 
         <android.widget.Button
             android:id="@+id/nextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/solid_button"
             android:text="다음"
-            android:textColor="#FFF9E1"
-            android:background="@drawable/solid_button"/>
+            android:textColor="#FFF9E1" />
     </LinearLayout>
 
     <!-- 게임하러 가기 버튼 하단 중앙 배치 -->
-    <android.widget.Button
-        android:id="@+id/goToGameBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="10dp"
-        android:text="게임하러 가기"
-        android:textColor="#FFF9E1"
-        android:background="@drawable/solid_button" />
+
 </LinearLayout>
 
 
