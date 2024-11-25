@@ -1,6 +1,8 @@
 package com.example.vocard;
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable { //word 객체를 바이트 스트림화
     private int imageResId;  // 이미지 리소스 ID
     private String englishWord;  // 영단어
     private String koreanMeaning;  // 한글 뜻

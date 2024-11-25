@@ -111,6 +111,9 @@ public class WordStudyActivity extends AppCompatActivity {
         // 게임하러 가기 버튼 클릭 이벤트
         gameBtn.setOnClickListener(view -> {
             Intent intent = new Intent(WordStudyActivity.this, CardFlipActivity.class);
+            // Word 배열과 chapter 정보 전달
+            intent.putExtra("chapter", chapter);
+            intent.putExtra("wordArray", wordArray); // Word 배열 전달
             startActivity(intent);
         });
     }

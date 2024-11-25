@@ -12,8 +12,9 @@ public class CardFlipActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_flip);
 
-        // 전달된 레벨 데이터 가져오기
+        // chapter 데이터 가져오기
         int level = getIntent().getIntExtra("chapter", -1);
-
+        // Word 배열 가져오기
+        Word[] wordArray = (Word[]) getIntent().getSerializableExtra("wordArray");
     }
 }
