@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,9 +33,28 @@ public class CardFlipActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_flip);
 
+        ImageView card1 = findViewById(R.id.card1);
+        card1.setClipToOutline(true);
+        ImageView card2 = findViewById(R.id.card2);
+        card2.setClipToOutline(true);
+        ImageView card3 = findViewById(R.id.card3);
+        card3.setClipToOutline(true);
+        ImageView card4 = findViewById(R.id.card4);
+        card4.setClipToOutline(true);
+        ImageView card5 = findViewById(R.id.card5);
+        card5.setClipToOutline(true);
+        ImageView card6 = findViewById(R.id.card6);
+        card6.setClipToOutline(true);
+        ImageView card7 = findViewById(R.id.card7);
+        card7.setClipToOutline(true);
+        ImageView card8 = findViewById(R.id.card8);
+        card8.setClipToOutline(true);
+        ImageView card9 = findViewById(R.id.card9);
+        card9.setClipToOutline(true);
         // 전달된 레벨 데이터와 Word 배열 가져오기
         level = getIntent().getIntExtra("chapter", -1);
         Word[] wordArray = (Word[]) getIntent().getSerializableExtra("wordArray");
