@@ -24,6 +24,7 @@
         <activity android:name=".LevelSelectActivity" />
         <activity android:name=".WordStudyActivity" />
         <activity android:name=".CardFlipActivity" />
+        <activity android:name=".StoryActivity" />
     </application>
 
 </manifest>
