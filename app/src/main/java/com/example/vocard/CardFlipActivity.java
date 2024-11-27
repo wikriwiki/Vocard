@@ -3,6 +3,7 @@ package com.example.vocard;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class CardFlipActivity extends AppCompatActivity {
     private TextView tvPrompt; // 제시어를 표시하는 TextView
     private int incorrectAttempts = 0; // 잘못된 시도 횟수
     private List<ImageView> flippedCards = new ArrayList<>(); // 이미 정답 처리된 카드
+    private int level; // 챕터 정보
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class CardFlipActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card_flip);
 
         // 전달된 레벨 데이터와 Word 배열 가져오기
-        int level = getIntent().getIntExtra("chapter", -1);
+        level = getIntent().getIntExtra("chapter", -1);
         Word[] wordArray = (Word[]) getIntent().getSerializableExtra("wordArray");
 
         // 뒤로 가기 버튼
@@ -47,8 +49,11 @@ public class CardFlipActivity extends AppCompatActivity {
         if (wordArray != null) {
             populateCards(wordArray);
 
-            // 5초 동안 카드 앞면을 보여준 후 뒤집기
-            new Handler().postDelayed(this::hideAllCards, 5000);
+            // 모든 카드 클릭 불가로 설정 (초기 5초 동안)
+            setCardsClickable(false);
+
+            // 5초 동안 카드 앞면을 보여주고 카운트다운 표시
+            startCountdown(5);
         }
     }
 
@@ -64,6 +69,10 @@ public class CardFlipActivity extends AppCompatActivity {
         wordList = new ArrayList<>(Arrays.asList(wordArray));
         Collections.shuffle(wordList);
 
+        // 카드 개수보다 단어 개수가 적을 경우 빈 데이터 추가
+        while (wordList.size() < cardIds.length) {
+            wordList.add(null); // 빈 데이터를 추가
+        }
 
         // 카드에 이미지 배치
         for (int i = 0; i < cardIds.length; i++) {
@@ -81,6 +90,18 @@ public class CardFlipActivity extends AppCompatActivity {
         }
     }
 
+    // 5초 동안 카운트다운 표시
+    private void startCountdown(int seconds) {
+        new Handler().postDelayed(() -> {
+            if (seconds > 0) {
+                tvPrompt.setText(String.valueOf(seconds));
+                startCountdown(seconds - 1);
+            } else {
+                hideAllCards();
+            }
+        }, 1000);
+    }
+
     // 5초 후 모든 카드를 뒷면으로 숨기기
     private void hideAllCards() {
         for (ImageView card : cardList) {
@@ -88,6 +109,9 @@ public class CardFlipActivity extends AppCompatActivity {
                 card.setImageResource(R.drawable.sample_image); // 뒷면 이미지로 변경
             }
         }
+
+        // 카드 클릭 가능하게 설정
+        setCardsClickable(true);
 
         // 첫 제시어 설정
         showNewPrompt();
@@ -129,15 +153,20 @@ public class CardFlipActivity extends AppCompatActivity {
                 // 정답인지 확인
                 if (selectedWord.equals(currentPromptWord)) {
                     // 정답이면 카드 유지하고 새로운 제시어
-                    Toast.makeText(this, "정답입니다!", Toast.LENGTH_SHORT).show();
                     card.setEnabled(false); // 정답 카드는 더 이상 클릭되지 않도록 비활성화
                     flippedCards.add(card); // 정답 처리된 카드 추가
                     incorrectAttempts = 0; // 정답 시 틀린 횟수 초기화
-                    showNewPrompt();
+
+                    // 모든 카드가 정답 처리되었는지 확인
+                    if (flippedCards.size() == wordList.size()) {
+                        proceedToNextActivity(); // 다음 액티비티로 이동
+                    } else {
+                        showNewPrompt();
+                    }
                 } else {
                     // 틀렸으면 카드 다시 뒷면으로 (2초 동안 앞면 유지)
                     incorrectAttempts++;
-                    Toast.makeText(this, "틀렸습니다. 다시 시도하세요!", Toast.LENGTH_SHORT).show();
+
                     new Handler().postDelayed(() -> card.setImageResource(R.drawable.sample_image), 2000);
 
                     // 3번 틀렸을 경우, 모든 카드 다시 보여주기
@@ -145,7 +174,7 @@ public class CardFlipActivity extends AppCompatActivity {
                         incorrectAttempts = 0; // 시도 횟수 초기화
 
                         // 0.5초 기다린 후 모든 카드 다시 보여주기 프로세스 시작
-                        new Handler().postDelayed(() -> showAllCardsTemporarily(), 500);
+                        new Handler().postDelayed(this::showAllCardsTemporarily, 500);
                     }
                 }
             }
@@ -208,5 +237,16 @@ public class CardFlipActivity extends AppCompatActivity {
         });
 
         flipOut.start();
+    }
+
+    // 모든 카드 정답 시 다음 액티비티로 이동
+    private void proceedToNextActivity() {
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(CardFlipActivity.this, StoryActivity.class);
+            intent.putExtra("chapter", level); // 챕터 정보 전달
+            startActivity(intent);
+            finish(); // 현재 액티비티 종료
+        }, 2000); // 2초(2000ms) 딜레이 후 실행
+
     }
 }

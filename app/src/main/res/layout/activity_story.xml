@@ -57,56 +57,62 @@
         />
 
     <!-- 동적 카드 레이아웃 -->
-    <GridLayout
-        android:id="@+id/cardGrid"
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:columnCount="3"
-        android:rowCount="1"
-        android:useDefaultMargins="true"
-        android:layout_marginBottom="50dp">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp">
 
         <!-- 카드 1 -->
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:id="@+id/card1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
             android:background="#E0F7FA"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:contentDescription="Card 1"
-            android:layout_margin="5dp" />
+            android:src="@drawable/sample_image"/>
 
         <!-- 카드 2 -->
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:id="@+id/card2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
             android:background="#E0F7FA"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:contentDescription="Card 2"
-            android:layout_margin="5dp" />
+            android:src="@drawable/sample_image"/>
 
         <!-- 카드 3 -->
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:background="#E0F7FA"
-            android:scaleType="centerCrop"
-            android:contentDescription="Card 3"
+            android:id="@+id/card3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:visibility="gone" />
-    </GridLayout>
+            android:background="#E0F7FA"
+            android:scaleType="fitCenter"
+            android:contentDescription="Card 3"
+            android:src="@drawable/sample_image"
+             />
+
+        <!-- 카드 4 -->
+        <ImageView
+            android:id="@+id/card4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:background="#E0F7FA"
+            android:scaleType="fitCenter"
+            android:contentDescription="Card 4"
+            android:src="@drawable/sample_image"
+             />
+    </LinearLayout>
+
 
     <!-- 이전/다음 버튼 하단 -->
     <LinearLayout
