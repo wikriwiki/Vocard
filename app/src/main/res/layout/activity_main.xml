@@ -19,15 +19,14 @@
         <TextView
             android:id="@+id/appName"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="149dp"
             android:layout_gravity="center"
             android:layout_marginTop="130dp"
             android:gravity="center"
-            android:text="동화로 알아가는 단어 세상"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:text="동화로 알아가는\n단어 세상"
+            android:fontFamily="@font/font"
             android:textColor="#4F4F4F"
-            />
+            android:textSize="34sp" />
 
         <android.widget.Button
             android:id="@+id/startBtn"
@@ -36,8 +35,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="500dp"
             android:background="@drawable/solid_button"
+            android:fontFamily="@font/font"
             android:text="시작하기"
-            android:textColor="#FFF9E1" />
+            android:textColor="#FFF9E1"
+            android:textSize="16sp" />
 
 
     </LinearLayout>

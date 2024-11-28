@@ -17,22 +17,27 @@
         android:layout_marginRight="26dp"
         android:background="@drawable/solid_button"
         android:text="뒤로 가기"
+        android:fontFamily="@font/font"
         android:textAllCaps="false"
         android:textColor="#FFF9E1"
-        tools:ignore="RtlHardcoded"
+        android:textSize="16sp"
 
-        />
+        tools:ignore="RtlHardcoded" />
     <!-- 상단 제시어 -->
     <TextView
         android:id="@+id/tv_prompt"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="262dp"
+        android:layout_height="257dp"
+        android:background="@drawable/rounded_white_corner"
+        android:fontFamily="@font/font"
         android:gravity="center"
         android:padding="16dp"
         android:text="제시어를 입력하세요"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <!-- 하단 그리드 -->
     <GridLayout
@@ -41,142 +46,207 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:columnCount="3"
-        android:padding="10dp">
+        android:padding="2dp">
 
         <!-- 카드 1 -->
-        <ImageView
-            android:id="@+id/card1"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_rowWeight="1"
             android:layout_column="0"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 2 -->
-
-
-        <ImageView
-            android:id="@+id/card2"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_rowWeight="1"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:adjustViewBounds="true"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
-        <!-- 카드 3 -->
-        <ImageView
-            android:id="@+id/card3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_row="0"
             android:layout_rowWeight="1"
-            android:layout_column="2"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
+
+        <!-- 카드 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 4 -->
-        <ImageView
-            android:id="@+id/card4"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_rowWeight="1"
             android:layout_column="0"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 5 -->
-        <ImageView
-            android:id="@+id/card5"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_rowWeight="1"
             android:layout_column="1"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 6 -->
-        <ImageView
-            android:id="@+id/card6"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_rowWeight="1"
             android:layout_column="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 7 -->
-        <ImageView
-            android:id="@+id/card7"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_rowWeight="1"
             android:layout_column="0"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 8 -->
-        <ImageView
-            android:id="@+id/card8"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_rowWeight="1"
             android:layout_column="1"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
 
         <!-- 카드 9 -->
-        <ImageView
-            android:id="@+id/card9"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_rowWeight="1"
             android:layout_column="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:background="#FFCCCC"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:padding="2dp"
+            android:background="@drawable/rounded_corner_border">
+
+            <ImageView
+                android:id="@+id/card9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corner_border"                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
     </GridLayout>
 </LinearLayout>
