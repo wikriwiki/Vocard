@@ -72,16 +72,49 @@ public class WordStudyActivity extends AppCompatActivity implements OnInitListen
                 new Word(R.drawable.rudolph, "Rudolph", "루돌프"),
                 new Word(R.drawable.santa, "Santa", "산타")
         };
+/*
+        Word[] chapter2Words = new Word[]{
+                new Word(R.drawable.girl, "Girl", "소녀"),
+                new Word(R.drawable.finds, "Finds", "찾다"),
+                new Word(R.drawable.map, "Map", "지도"),
+                new Word(R.drawable.she, "She", "그녀"),
+                new Word(R.drawable.explores, "Explores", "탐험하다"),
+                new Word(R.drawable.forest, "Forest", "숲"),
+                new Word(R.drawable.cave, "Cave", "동굴"),
+                new Word(R.drawable.discovers, "Discovers", "발견하다"),
+                new Word(R.drawable.treasure, "Treasure", "보물")
+        };
 
+        Word[] chapter3Words = new Word[]{
+                new Word(R.drawable.ghost, "Ghost", "유령"),
+                new Word(R.drawable.haunts, "Haunts", "괴롭히다"),
+                new Word(R.drawable.abandoned, "Abandoned", "버려진"),
+                new Word(R.drawable.night, "Night", "밤"),
+                new Word(R.drawable.decides, "Decides", "결정하다"),
+                new Word(R.drawable.explore, "Explore", "탐험하다"),
+                new Word(R.drawable.discovers, "Discovers", "발견하다"),
+                new Word(R.drawable.seeks, "Seeks", "추구하다"),
+                new Word(R.drawable.friendship, "Friendship", "우정")
+        };
+*/
         // 챕터에 따라 단어 배열 선택
         switch (chapter) {
             case 1:
                 wordArray = chapter1Words;
                 break;
+                /*
+            case 2:
+                wordArray = chapter2Words;
+                break;
+            case 3:
+                wordArray = chapter3Words;
+                break;*/
             default:
                 wordArray = new Word[0]; // 잘못된 챕터일 경우 빈 배열
                 break;
         }
+
+
 
         // 초기 단어 표시
         if (wordArray.length > 0) {
