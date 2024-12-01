@@ -12,112 +12,77 @@
     <!-- 이미지뷰 중앙 상단 -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:contentDescription="단어 이미지"
-        android:src="@drawable/sample_image" />
+        android:scaleType="fitXY"
+        android:src="@drawable/sample_image"
+        android:background="@drawable/rounded_corner_border"/>
 
     <!-- 영단어와 스피커 아이콘 -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp">
 
-        <TextView
-            android:id="@+id/englishWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apple"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:id="@+id/speakerIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_speaker"
-            android:contentDescription="발음 듣기" />
-    </LinearLayout>
 
     <!-- 한글 뜻 -->
-    <TextView
-        android:id="@+id/koreanMeaning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="사과"
-        android:textSize="30sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        />
+
 
     <!-- 동적 카드 레이아웃 -->
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="50dp"
-        android:padding="10dp">
-
-        <!-- 카드 1 -->
-        <ImageView
-            android:id="@+id/card1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:background="#E0F7FA"
-            android:scaleType="fitCenter"
-            android:contentDescription="Card 1"
-            android:src="@drawable/sample_image"/>
-
-        <!-- 카드 2 -->
-        <ImageView
-            android:id="@+id/card2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:background="#E0F7FA"
-            android:scaleType="fitCenter"
-            android:contentDescription="Card 2"
-            android:src="@drawable/sample_image"/>
-
-        <!-- 카드 3 -->
-        <ImageView
-            android:id="@+id/card3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:background="#E0F7FA"
-            android:scaleType="fitCenter"
-            android:contentDescription="Card 3"
-            android:src="@drawable/sample_image"
-             />
-
-        <!-- 카드 4 -->
-        <ImageView
-            android:id="@+id/card4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:background="#E0F7FA"
-            android:scaleType="fitCenter"
-            android:contentDescription="Card 4"
-            android:src="@drawable/sample_image"
-             />
-    </LinearLayout>
 
 
     <!-- 이전/다음 버튼 하단 -->
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/speakerIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:contentDescription="발음 듣기"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_speaker"
+            android:background="@drawable/rounded_corner_border"
+            android:clickable="true"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/englishWord"
+            android:paddingTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:paddingLeft="8dp"
+            android:fontFamily="@font/font"
+            android:text="Apple"
+            android:textColor="#1F8643"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/koreanMeaning"
+            android:paddingLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/font"
+            android:paddingTop="10dp"
+            android:text="사과"
+            android:textColor="#8B302D"
+            android:textSize="26dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
         android:orientation="horizontal">
 
         <android.widget.Button
@@ -127,6 +92,7 @@
             android:layout_marginEnd="150dp"
             android:layout_weight="1"
             android:background="@drawable/solid_button"
+            android:fontFamily="@font/font"
             android:text="이전"
             android:textColor="#FFF9E1" />
 
@@ -136,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/solid_button"
+            android:fontFamily="@font/font"
             android:text="다음"
             android:textColor="#FFF9E1" />
     </LinearLayout>
