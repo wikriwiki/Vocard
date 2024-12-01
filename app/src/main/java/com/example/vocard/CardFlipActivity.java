@@ -127,7 +127,7 @@ public class CardFlipActivity extends AppCompatActivity {
     private void hideAllCards() {
         for (ImageView card : cardList) {
             if (!flippedCards.contains(card)) {
-                card.setImageResource(R.drawable.sample_image); // 뒷면 이미지로 변경
+                card.setImageResource(R.drawable.back); // 뒷면 이미지로 변경
             }
         }
 
@@ -188,7 +188,7 @@ public class CardFlipActivity extends AppCompatActivity {
                     // 틀렸으면 카드 다시 뒷면으로 (2초 동안 앞면 유지)
                     incorrectAttempts++;
 
-                    new Handler().postDelayed(() -> card.setImageResource(R.drawable.sample_image), 2000);
+                    new Handler().postDelayed(() -> card.setImageResource(R.drawable.back), 2000);
 
                     // 3번 틀렸을 경우, 모든 카드 다시 보여주기
                     if (incorrectAttempts == 3) {
@@ -225,7 +225,7 @@ public class CardFlipActivity extends AppCompatActivity {
             for (int i = 0; i < cardList.size(); i++) {
                 ImageView card = cardList.get(i);
                 if (!flippedCards.contains(card)) {
-                    card.setImageResource(R.drawable.sample_image); // 뒷면으로 설정
+                    card.setImageResource(R.drawable.back); // 뒷면으로 설정
                 }
             }
             // 모든 카드 클릭 가능하게 설정

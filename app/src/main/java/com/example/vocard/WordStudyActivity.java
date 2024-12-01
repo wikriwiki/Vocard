@@ -27,7 +27,7 @@ public class WordStudyActivity extends AppCompatActivity implements OnInitListen
 
         // TTS 초기화
         tts = new TextToSpeech(this, this);
-
+        tts.setSpeechRate(0.6f);
         ImageView ttsBtn = findViewById(R.id.speakerIcon);
         ttsBtn.setClipToOutline(true);
         ttsBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,13 +72,13 @@ public class WordStudyActivity extends AppCompatActivity implements OnInitListen
                 new Word(R.drawable.rudolph, "Rudolph", "루돌프"),
                 new Word(R.drawable.santa, "Santa", "산타")
         };
-/*
+
         Word[] chapter2Words = new Word[]{
                 new Word(R.drawable.girl, "Girl", "소녀"),
                 new Word(R.drawable.finds, "Finds", "찾다"),
                 new Word(R.drawable.map, "Map", "지도"),
-                new Word(R.drawable.she, "She", "그녀"),
-                new Word(R.drawable.explores, "Explores", "탐험하다"),
+                new Word(R.drawable.brave, "Brave", "용감한"),
+                new Word(R.drawable.explore, "Explore", "탐험하다"),
                 new Word(R.drawable.forest, "Forest", "숲"),
                 new Word(R.drawable.cave, "Cave", "동굴"),
                 new Word(R.drawable.discovers, "Discovers", "발견하다"),
@@ -91,24 +91,24 @@ public class WordStudyActivity extends AppCompatActivity implements OnInitListen
                 new Word(R.drawable.abandoned, "Abandoned", "버려진"),
                 new Word(R.drawable.night, "Night", "밤"),
                 new Word(R.drawable.decides, "Decides", "결정하다"),
-                new Word(R.drawable.explore, "Explore", "탐험하다"),
-                new Word(R.drawable.discovers, "Discovers", "발견하다"),
+                new Word(R.drawable.adventure, "Adventure", "모험"),
+                new Word(R.drawable.realize, "Realize", "발견하다"),
                 new Word(R.drawable.seeks, "Seeks", "추구하다"),
                 new Word(R.drawable.friendship, "Friendship", "우정")
         };
-*/
+
         // 챕터에 따라 단어 배열 선택
         switch (chapter) {
             case 1:
                 wordArray = chapter1Words;
                 break;
-                /*
+
             case 2:
                 wordArray = chapter2Words;
                 break;
             case 3:
                 wordArray = chapter3Words;
-                break;*/
+                break;
             default:
                 wordArray = new Word[0]; // 잘못된 챕터일 경우 빈 배열
                 break;
