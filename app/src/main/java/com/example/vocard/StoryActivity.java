@@ -1,6 +1,7 @@
 package com.example.vocard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -35,6 +36,12 @@ public class StoryActivity extends AppCompatActivity implements TextToSpeech.OnI
         TextView kor = findViewById(R.id.koreanMeaning);
         Button next = findViewById(R.id.nextButton);
         Button prev = findViewById(R.id.prevButton);
+        Button home = findViewById(R.id.goToHomeBtn);
+
+        home.setOnClickListener(v -> {
+            Intent intent = new Intent(StoryActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
         ImageView ttsbtn = findViewById(R.id.speakerIcon);
         ttsbtn.setClipToOutline(true);
         tts = new TextToSpeech(this, this);
